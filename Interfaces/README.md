@@ -1,10 +1,13 @@
+---
+marp: true
+---
 
 # Interfaces in C#
 
 ## Was ist ein Interface?
 
-- Ein Interface ist eine Sammlung von Methodendefinitionen, die von einer Klasse oder Struktur implementiert werden müssen.
-- Interfaces definieren keine Implementierung der Methoden, sondern nur ihre Signatur.
+- Ein Interface ist eine Sammlung von Methoden.- und Eigenschaftendefinitionen, die von einer Klasse oder Struktur implementiert werden müssen.
+- Interfaces definieren keine Implementierung der Methoden oder Eigenschaften, sondern nur ihre Signatur.
 - **Warum Interfaces?**
   - Trennung von Schnittstellen und Implementierung
   - Erleichtert die Erstellung flexibler und erweiterbarer Software
@@ -55,6 +58,10 @@ public class Circle : IShape
 - Klassen können in C# nur von einer Basisklasse erben, aber sie können mehrere Interfaces implementieren.
 - Dies ermöglicht eine Art "Mehrfachvererbung", ohne die typischen Probleme, die bei Mehrfachvererbung in anderen Sprachen auftreten können.
 
+---
+
+## Mehrfachvererbung durch Interfaces - Beispiel
+
 ```csharp
 public interface IShape
 {
@@ -88,11 +95,16 @@ public class ColoredCircle : IShape, IColorable
   - Kann sowohl implementierte Methoden als auch abstrakte Methoden enthalten.
   - Unterstützt Felder und Konstruktoren.
   - Nur eine einzige abstrakte Klasse kann geerbt werden.
+  - Weniger flexibel (es muss die **Is A** Beziehung erfüllt sein)
   
 - **Interface:**
   - Enthält nur Methodensignaturen (bis auf Default-Implementierungen, ab C# 8.0).
   - Keine Felder, Konstruktoren oder Implementierungen (außer mit Default-Implementierungen).
   - Mehrere Interfaces können implementiert werden.
+
+---
+
+## Interfaces vs. Abstrakte Klassen - Beispiel
 
 ```csharp
 public abstract class Animal
@@ -131,6 +143,10 @@ public class Bird : Animal, IFlyable
 - Ein Interface kann auch von einem anderen Interface erben.
 - Dies ermöglicht die Erstellung hierarchischer Interface-Strukturen.
 
+---
+
+## Interface-Vererbung - Beispiel
+ 
 ```csharp
 public interface IShape
 {
@@ -163,6 +179,10 @@ public class Sphere : I3DShape
 - Seit C# 8.0 können Interfaces auch Standardimplementierungen für Methoden enthalten.
 - Dies ermöglicht es, neue Methoden zu einem Interface hinzuzufügen, ohne dass bestehende Implementierungen brechen.
 
+---
+
+## Default-Implementierung in Interfaces (C# 8.0) - Beispiel
+
 ```csharp
 public interface ILogger
 {
@@ -189,6 +209,10 @@ public class ConsoleLogger : ILogger
 ## Interface als Rückgabewert und Parameter
 
 - Interfaces können als Rückgabe- und Parameter-Typen verwendet werden, um Flexibilität zu schaffen.
+
+---
+
+## Interface als Rückgabewert und Parameter - Beispiel
 
 ```csharp
 public interface IDatabase
@@ -218,6 +242,9 @@ public class DatabaseManager
 ## Beispiel für Dependency Injection mit Interfaces
 
 - Interfaces spielen eine Schlüsselrolle in **Dependency Injection** und Inversion of Control (IoC).
+
+---
+
 
 ```csharp
 public interface IService
