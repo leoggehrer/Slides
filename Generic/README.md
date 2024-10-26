@@ -335,3 +335,195 @@ Reflection liefert auch die konkreten Platzhaltertypen!
 
 ---
 
+## Generische Methoden
+
+Methoden, die mit verschiedenen Datentypen arbeiten können
+
+```csharp
+static void Sort<T> (T[] a) where T : IComparable {
+  for (int i = 0; i < a.Length-1; i++) {
+    for (int j = i+1; j < a.Length; j++) {
+      if (a[j].CompareTo(a[i]) < 0) {
+        T x = a[i]; a[i] = a[j]; a[j] = x;
+      }
+    }
+  }
+}
+```
+
+...kann beliebige Arrays sortieren, solange die Elemente IComparable implementieren
+
+---
+
+**Benutzung**
+
+```csharp
+int[] a = {3, 7, 2, 5, 3};
+...
+Sort<int>(a); // a == {2, 3, 3, 5, 7}
+```
+
+```csharp
+string[] s = {"one", "two", "three"};
+...
+Sort<string>(s); // s == {"one", "three", "two"}
+```
+
+Meist weiß der Compiler aus den Parametern welchen Typ er für den Platzhalter einsetzen muss, so dass man einfach schreiben kann:
+
+`Sort(a); // a == {2, 3, 3, 5, 7}`
+
+`Sort(s); // s == {"one", "three", "two"}`
+
+---
+
+## Generische Delegates
+
+```csharp
+delegate bool Check<T>(T value);
+class Payment {
+  public DateTime date;
+  public int amount;
+}
+class Account {
+  ArrayList payments = new ArrayList();
+  public void Add(Payment p) { payments.Add(p); }
+  public int AmountPayed(Check<Payment> matches) {
+    int val = 0;
+    foreach (Payment p in payments)
+      if (matches(p)) val += p.amount;
+    return val;
+  }
+}
+```
+
+`matches`...Es wird eine Prüfmethode übergeben, die für jedes Payment prüft, ob es in Frage kommt
+
+---
+
+## Generische Delegates
+
+```csharp
+bool PaymentsAfter(Payment p) {
+  return DateTime.Compare(p.date, myDate) >= 0;
+}
+...
+myDate = new DateTime(2003, 11, 1);
+int val = account.AmountPayed(new Check<Payment>(PaymentsAfter));
+```
+
+```csharp
+int val = account.AmountPayed(delegate(Payment p) {
+  return DateTime.Compare(p.date, new DateTime(2003,11,1)) >= 0;
+});
+```
+... als anonyme Methode
+
+---
+
+## Nullwerte
+
+**Nullsetzen eines Werts**
+
+```csharp
+void Foo<T>() {
+  T x = null; // Fehler
+  T y = 0; // Fehler
+  T z = T.default; // ok! 0, '\0', false, null
+}
+```
+
+**Abfragen auf null**
+
+```csharp
+void Foo<T>(T x) {
+  if (x == null) {
+    Console.WriteLine(x + " == null");
+  } else {
+    Console.WriteLine(x + " != null");
+  }
+}
+```
+
+---
+
+## Namensraum `System.Collections.Generic`
+
+Neu generische Typen
+
+**Klassen**
+
+```csharp
+List<T>           // entspricht ArrayList
+Dictionary<T, U>  // entspricht Hashtable
+SortedDictionary<T, U>
+Stack<T>
+Queue<T>
+```
+
+**Interfaces**
+
+```csharp
+ICollection<T>
+IList<T>
+IDictionary<T, U>
+IEnumerable<T>
+IEnumerator<T>
+IComparable<T>
+IComparer<T>
+```
+
+---
+
+## Was geschieht hinter den Kulissen?
+
+`class Buffer<Element> {...}`   Compiler erzeugt CIL-Code für Klasse Buffer mit Platzhalter für Element.
+
+**Konkretisierung mit Werttypen**
+
+```csharp
+Buffer<int> a = new Buffer<int>();      // CLR erzeugt zur Laufzeit neue Klasse Buffer<int>,
+                                        // in der Element durch int ersetzt wird.
+
+Buffer<int> b = new Buffer<int>();      // Verwendet vorhandenes Buffer<int>.
+
+Buffer<float> c = new Buffer<float>();  // CLR erzeugt zur Laufzeit neue Klasse Buffer<float>,
+                                        // in der Element durch float erstezt wird.
+```
+
+**Konkretisierung mit Referenztypen**
+
+```csharp
+Buffer<string> a = new Buffer<string>();  // CLR erzeugt zur Laufzeit neue Klasse Buffer<object>,
+                                          // die mit allen Referenztypen arbeiten kann.
+
+Buffer<string> b = new Buffer<string>();  // Verwendet vorhandenes Buffer<object>.
+
+Buffer<Node> b = new Buffer<Node>();      // Verwendet vorhandenes Buffer<object>.
+```
+
+---
+
+## Unterschiede zu anderen Sprachen
+
+**C++** ähnliche Syntax
+
+```c++
+template <class Element>
+class Buffer {
+...
+void Put(Element x);
+}
+Buffer<int> b1;
+Buffer<int> b2;
+```
+
+- Compiler erzeugt für jede Konkretisierung eine neue Klasse
+- keine Constraints, weniger typsicher, 
+- dafür können Platzhalter auch Konstanten sein
+
+**Java** (ab Version 1.5)
+- Platzhalter können nur durch Referenztypen ersetzt werden
+- durch Type-Casts implementiert (kostet Laufzeit)
+- Reflection liefert keine exakte Typinformation
+  
