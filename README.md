@@ -1,6 +1,6 @@
 # Inhaltsverzeichnis
 
-## OOP-Objektorientierte Programmierung
+## [OOP-Objektorientierte Programmierung](#)
 
 - [Grundlagen](https://github.com/leoggehrer/Slides/tree/main/OOPBasics)
 - [Vererbung](https://github.com/leoggehrer/Slides/tree/main/Inheritance)
@@ -12,5 +12,4 @@
 ## [Design Patterns](https://github.com/leoggehrer/Slides/tree/main/DesignPattern)
 
 - [Singleton-Pattern](https://github.com/leoggehrer/Slides/tree/main/SingletonPattern)
-
-
+- [Observer-Pattern](https://github.com/leoggehrer/Slides/tree/main/ObserverPattern)
