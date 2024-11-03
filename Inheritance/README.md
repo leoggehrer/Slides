@@ -226,7 +226,7 @@ pet.WhoAreYou(); // "I am a dog" !!
 
 ## Konstruktoren in Ober- und Unterklasse
 
-![Konstruction](Inheritance02.png)
+![Konstruktoren](img/image02.png)
 
 ---
 

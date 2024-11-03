@@ -49,7 +49,7 @@ class Test{
       int j = 22 / Zero;
       Console.WriteLine(“Diese Ausgabe wird NIE ausgeführt!");
     } // Ausnahmen, die im try-Block auftreten, werden hierher übermittelt
-    catch (Exception e)
+    catch (img/image e)
     {
       Console.WriteLine("Exception " + e.Message);
     }
@@ -157,13 +157,13 @@ Alle Exceptions sind zumindest von System.Exception abgeleitet und stellen daher
 
 ## Exception-Hierarchie (Auszug)
 
-![Exception-Hierarchie](Exception01.png)
+![Exception-Hierarchie](img/image01.png)
 
 ---
 
 ## Suche nach passender catch-Klausel
 
-![Exception-Chain](Exception02.png)
+![Exception-Chain](img/image02.png)
 
 Ruferkette wird rückwärts nach passender catch-Klausel durchsucht. Wenn keine Fehlerbehandlung gefunden => Programmabbruch mit Fehlermeldung und Stack-Trace
 
@@ -204,13 +204,13 @@ Rufer von myMethod können IOException behandeln, müssen es aber nicht.
 
 Delegates werden bei der Suche nach catch-Klausel wie normale Methoden behandelt.
 
-![Exception in delegates](Exception03.png)
+![Exception in delegates](img/image03.png)
 
 ---
 
 ## Ausnahmen in Multicast-Delegates
 
-![Exception in multicast-delegates](Exception04.png)
+![Exception in multicast-delegates](img/image04.png)
 
 - tritt in `G()` die Ausnahme Exc1 auf, wird auch noch `H()` aufgerufen
 - tritt in `G()` die Ausnahme Exc2 auf, wird `H()` nicht mehr aufgerufen, weil Exc2 erst in `Main()` abgefangen wird.

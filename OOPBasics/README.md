@@ -170,7 +170,7 @@ OOP steht für Objektorientierte Programmierung. Es handelt sich dabei um ein Pr
 
 ## Darstellung von "Otto"
 
-![Objekt-Otto](OOPBasics01.png)
+![Objekt-Otto](img/image01.png)
 
 ---
 
@@ -182,7 +182,7 @@ OOP steht für Objektorientierte Programmierung. Es handelt sich dabei um ein Pr
   - Verhalten (*behavior)* ➔ Abläufe (Methoden) 
     - Beispiel Hund: bellt, frisst,  springt, … 
 
-![picture02](OOPBasics02.png)
+![picture02](img/image02.png)
 
 ---
 
@@ -234,13 +234,13 @@ OOP steht für Objektorientierte Programmierung. Es handelt sich dabei um ein Pr
 
 ## Klassen sind Schablonen
 
-![Klassen sind Schablonen](OOPBasics03.jpeg)
+![Klassen sind Schablonen](img/image03.jpeg)
 
 ---
 
 ## Instanzierung: Auf Basis von Klassen Objekte erzeugen**
 
-![Instanzierung: Auf Basis von Klassen Objekte erzeugen](OOPBasics04.jpeg)
+![Instanzierung: Auf Basis von Klassen Objekte erzeugen](img/image04.jpeg)
 
 ---
 
@@ -277,7 +277,7 @@ int ageInDays = pupil.CalculateAgeInDays();
   - Schlechte Kapselung
 - Beispiel Counter:
 
-![](OOPBasics05.png)
+![](img/image05.png)
 
 ---
 
@@ -296,7 +296,7 @@ int ageInDays = pupil.CalculateAgeInDays();
 
 ## Zusammenhang Objekt und Klasse II
 
-![](OOPBasics06.png)
+![](img/image06.png)
 
 ---
 
@@ -316,7 +316,7 @@ int ageInDays = pupil.CalculateAgeInDays();
 
 ## Statt new und Set… ➔ Konstruktor
 
-![](OOPBasics07.png)
+![](img/image07.png)
 
 ---
 
