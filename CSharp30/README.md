@@ -2,6 +2,7 @@
 marp: true
 theme: default
 paginate: false
+size: 16:9
 ---
 
 # .NET Framework 3.0
