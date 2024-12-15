@@ -1,7 +1,6 @@
 ---
 marp: true
 ---
-
 # Singleton Design Pattern in C#
 
 ---
@@ -32,7 +31,9 @@ marp: true
 
 ---
 
-## Implementierung in C#
+## Umsetzung in C#
+
+Eine exemplarische Umsetzung ist im nachfolgenden Programmbeispiel skizziert. Weitere Umsetzungen finden und deren Gegenüberstellungen finden Sie unter den Link: [Singleton-Pattern mit C#](https://github.com/leoggehrer/SingletonPattern)
 
 ```csharp
 public sealed class Singleton
@@ -83,10 +84,12 @@ public sealed class Singleton
 ## Vor- und Nachteile des Singleton-Patterns
 
 ### Vorteile
+
 - Einfache und zentrale Verwaltung einer einzigen Instanz.
 - Reduzierter Speicherverbrauch, da nur ein Objekt existiert.
 
 ### Nachteile
+
 - Kann zu **hoher Abhängigkeit** von der Singleton-Klasse führen.
 - **Erweiterung und Testen** können kompliziert werden, da die Instanz global ist und nicht so leicht substituiert werden kann.
 
