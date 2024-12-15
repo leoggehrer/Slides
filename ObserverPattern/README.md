@@ -1,6 +1,7 @@
 ---
 marp: true
 ---
+
 # Observer Pattern in C#
 
 ---
