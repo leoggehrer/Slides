@@ -13,6 +13,7 @@
 
 - [Singleton-Pattern](https://github.com/leoggehrer/Slides/tree/main/SingletonPattern)
 - [Observer-Pattern](https://github.com/leoggehrer/Slides/tree/main/ObserverPattern)
+- [MVC-Pattern](https://github.com/leoggehrer/Slides/tree/main/MVCPattern)
 
 ## [Spracherweiterungen](#)
 
