@@ -94,12 +94,12 @@ Der **Controller** dient als Vermittler zwischen Model und View. Er nimmt Benutz
 
 ---
 
-## Fazit
-
-Das MVC-Pattern ist ein leistungsstarkes Konzept, das Entwicklern hilft, sauberen und modularen Code zu schreiben. Es ist besonders nützlich in Anwendungen mit komplexen Benutzeroberflächen und Geschäftslogik. Durch die klare Trennung der Komponenten können Teams effizienter zusammenarbeiten und Projekte schneller skalieren.
-
----
-
 ## Umsetzung in C#
 
 Das Pattern wird natürlich in Abhängigkeit der Möglichkeit einer Programmiersprache entsprechend umgesetzt. Eine mögliche Umsetzung in C# finden Sie unter den Link: [MVC-Pattern mit C#](https://github.com/leoggehrer/MVCPattern)
+
+---
+
+## Fazit
+
+Das MVC-Pattern ist ein leistungsstarkes Konzept, das Entwicklern hilft, sauberen und modularen Code zu schreiben. Es ist besonders nützlich in Anwendungen mit komplexen Benutzeroberflächen und Geschäftslogik. Durch die klare Trennung der Komponenten können Teams effizienter zusammenarbeiten und Projekte schneller skalieren.
