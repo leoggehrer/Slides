@@ -35,12 +35,13 @@ Das **Model** repräsentiert die Daten und die Geschäftslogik der Anwendung. Es
 
 ---
 
-### 2. View
+### 2. Views
 
-Die **View** ist für die Darstellung der Daten zuständig. Sie präsentiert dem Benutzer die Informationen und reagiert auf Änderungen im Model.
+Die **Views** sind für die Darstellung der Daten zuständig. Sie präsentiert dem Benutzer die Informationen und reagiert auf Änderungen im Model.
 
 * Sie ist passiv und empfängt Updates vom Model.
 * Sie enthält keine Geschäftslogik.
+* Sie leiten Eingaben an den Controller weiter.
 
 **Beispiele:**
 
@@ -65,11 +66,11 @@ Der **Controller** dient als Vermittler zwischen Model und View. Er nimmt Benutz
 
 ## Ablauf im MVC-Pattern
 
-1. Der Benutzer interagiert mit der **View** (z. B. durch einen Klick).
+1. Der Benutzer interagiert mit der **View** (z.B.: durch einen Klick oder eine Eingabe usw.).
 2. Die **View** sendet die Benutzeraktion an den **Controller**.
 3. Der **Controller** verarbeitet die Eingabe, führt Logik aus und aktualisiert das **Model**.
-4. Das **Model** aktualisiert seine Daten und benachrichtigt die **View** über die Änderungen.
-5. Die **View** wird neu gerendert und präsentiert die aktualisierten Daten dem Benutzer.
+4. Das **Model** aktualisiert seine Daten und benachrichtigt die **Views** über die Änderungen.
+5. Jede einzelne **View** wird neu gerendert und präsentiert die aktualisierten Daten dem Benutzer.
 
 ---
 
