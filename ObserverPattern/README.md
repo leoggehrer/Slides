@@ -10,7 +10,7 @@ marp: true
 
 **Observer: (Gang Of Four [GoF], Seite 287)**
 
-Definiere eine **1-zu-n-Abhängigkeit** zwischen Objekten, so 	dass die Änderung des Zustands eines Objekts dazu führt, 	das alle abhängigen Objekte benachrichtigt und automatisch 	aktualisiert werden.
+Definiere eine **1-zu-n-Abhängigkeit** zwischen Objekten, so dass die Änderung des Zustands eines Objekts dazu führt, das alle abhängigen Objekte benachrichtigt und automatisch aktualisiert werden.
 
 ---
 

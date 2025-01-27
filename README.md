@@ -18,3 +18,7 @@
 ## [Spracherweiterungen](#)
 
 - [3.0](https://github.com/leoggehrer/Slides/tree/main/CSharp30)
+
+## [Tools](#)
+
+- [Nuget-Packages-Install](https://github.com/leoggehrer/Slides/tree/main/NugetInstall)
