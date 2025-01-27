@@ -21,4 +21,4 @@
 
 ## [Tools](#)
 
-- [Nuget-Packages-Install](https://github.com/leoggehrer/Slides/tree/main/NugetInstall)
+- [Nuget-Packages-Install](https://github.com/leoggehrer/Slides/tree/main/NutgetInstall)
