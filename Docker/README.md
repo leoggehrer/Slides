@@ -1,6 +1,7 @@
 ---
 marp: true
 ---
+
 # Einführung in Docker
 
 Docker ist eine Open-Source-Plattform zur Containerisierung von Anwendungen. Sie ermöglicht es Entwicklern, Software mit allen benötigten Abhängigkeiten in Containern zu verpacken, sodass sie unabhängig von der Umgebung konsistent ausgeführt werden können.
@@ -165,7 +166,7 @@ Um einen Microsoft SQL Server in Docker zu starten, verwende folgenden Befehl:
 
 > docker exec -it mssql-container /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
 
-Anschließend werden Sie aufgefordert das `Password:` einzugeben. Nach der erfolgreichen Authentifizierung befinden Sie sich in der `SqlCmd`-Umgebung. 
+Anschließend werden Sie aufgefordert das `Password:` einzugeben. Nach der erfolgreichen Authentifizierung befinden Sie sich in der `SqlCmd`-Umgebung.
 
 ---
 
@@ -177,14 +178,52 @@ Anschließend werden Sie aufgefordert das `Password:` einzugeben. Nach der erfol
 | `CREATE DATABASE TestDB;` | Erstellt eine neue Datenbank. |
 | `USE TestDB;` | Wechselt zu einer bestimmten Datenbank. |
 | `CREATE TABLE Users (ID INT, Name NVARCHAR(50));` | Erstellt eine Tabelle. |
-| `INSERT INTO Users (ID, Name) VALUES (1, 'Alice'); ` | Fügt eine Zeile in die Tabelle ein. |
+| `INSERT INTO Users (ID, Name) VALUES (1, 'Alice');` | Fügt eine Zeile in die Tabelle ein. |
 | `SELECT * FROM Users;` | Zeigt alle Daten aus der Tabelle an. |
 | `DROP DATABASE TestDB;`| Löscht die Datenbank. |
 
 ---
 
-#### Einfachen Befehl absetzen
+#### Einzelne SQL-Befehl ausführen
 
+Sobald die Verbindung zur sqlcmd-Konsole hergestellt ist, können folgende Befehle absetzen:
+
+```bash
+> SELECT @@VERSION;
+> GO
+```
+
+**Beispiel: Datenbank und Tabelle erstellen:**
+
+```bash
+> CREATE DATABASE TestDB;
+> GO
+> USE TestDB;
+> GO
+> CREATE TABLE Users (ID INT, Name NVARCHAR(50));
+> GO
+> INSERT INTO Users (ID, Name) VALUES (1, 'Alice');
+> GO
+```
+
+---
+
+#### Einzelne SQL-Befehl ausführen II
+
+**Daten aus einer Tabelle abrufen:**
+
+```bash
+> SELECT * FROM Users;
+> GO
+```
+
+**SQLCmd verlassen:**
+
+```bash
+> EXIT
+```
+
+Diese Befehle helfen, Docker und MSSQL effizient zu nutzen! 
 
 ---
 
@@ -197,4 +236,3 @@ Sie können den `Container` mit folgendem Befehl stoppen:
 Mit dem folgendem Befehl können Sie den `Container`  entfernen:
 
 > docker rm mssql-container
-
