@@ -68,6 +68,16 @@ Beispiel für `appsettings.Production.json`:
 
 ---
 
+### Packages installieren
+
+Um mit dem 'AppSettings' zu arbeiten, müssen die folgenden Packages installiert werden:
+
+- Microsoft.Extensions.Configuration.Json
+- Microsoft.Extensions.Configuration.Binder
+- Microsoft.Extensions.Configuration.EnvironmentVariables
+
+---
+
 ### Automatische Erkennung der Umgebung
 
 .NET erkennt die Umgebung anhand der Umgebungsvariablen `ASPNETCORE_ENVIRONMENT`. Standardwerte sind `Development`, `Staging` und `Production`.
@@ -83,15 +93,20 @@ Console.WriteLine($"Aktuelle Umgebung: {environment}");
 
 ### Laden der passenden Konfigurationsdatei
 
-Die `WebApplicationBuilder`-Klasse lädt automatisch die korrekte Konfigurationsdatei basierend auf der Umgebung:
+Die `ConfigurationBuilder`-Klasse lädt automatisch die korrekte Konfigurationsdatei basierend auf der Umgebung:
 
 ```csharp
-var builder = WebApplication.CreateBuilder(args);
-builder.Configuration
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
-    .AddEnvironmentVariables();
+var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+var builder = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .AddJsonFile($"appsettings.{environmentName ?? "Development"}.json", optional: true)
+        .AddEnvironmentVariables();
+
+IConfigurationRoot configurationRoot;
+
+configurationRoot = builder.Build();
+// Read value
+string connectionString = configurationRoot["ConnectionStrings:SqlServerDefaultConnection"];
 ```
 
 ---
