@@ -4,6 +4,8 @@ marp: true
 
 # Async und Await in C#
 
+[C# Programmierhandbuch/AsyncAwait](https://learn.microsoft.com/de-de/dotnet/visual-basic/programming-guide/concepts/async)
+
 ---
 
 ## Einführung
