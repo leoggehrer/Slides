@@ -19,6 +19,10 @@
 
 - [3.0](https://github.com/leoggehrer/Slides/tree/main/CSharp30)
 
+## [Sprachkonzepte](#)
+
+- [5.0 Async and Await](https://github.com/leoggehrer/Slides/tree/main/DotnetAsyncAwait)
+
 ## [Tools](#)
 
 - [Docker-Install-MSQL](https://github.com/leoggehrer/Slides/tree/main/Docker)

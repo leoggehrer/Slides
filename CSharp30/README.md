@@ -13,14 +13,14 @@ size: 16:9
 
 ## Neue Spracherweiterung C# 3.0
 
-  - LINQ
-  - Lambda-Ausdrücke
-  - Erweiterungsmethoden
-  - Automatische Eigenschaften
-  - Objekt- und Auflistungsinitialisierer
-  - Anonyme Typen
-  - Abfrage-Ausdrücke
-  - Partielle Klassen und Methoden
+- LINQ
+- Lambda-Ausdrücke
+- Erweiterungsmethoden
+- Automatische Eigenschaften
+- Objekt- und Auflistungsinitialisierer
+- Anonyme Typen
+- Abfrage-Ausdrücke
+- Partielle Klassen und Methoden
 
 ---
 
@@ -35,6 +35,7 @@ Weitere Informationen zu LINQ finden Sie im​ C# Programmierhandbuch von Micros
 ## LINQ
 
 ### Übersicht
+
 - SQL-ähnliche Abfragen in C#:
   - LINQ to Objects
   - LINQ to XML
@@ -76,6 +77,7 @@ foreach (var city in result)
 ```
 
 **Ergebnis:**
+
 - LINZ
 - LONDON
 
@@ -90,6 +92,7 @@ Weitere Informationen zu Lambda Ausdrücken finden Sie im C# Programmierhandbuch
 [C# Programmierhandbuch/Lambda​](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/operators/lambda-operator​)
 
 ### Definition
+
 - Kurzform für delegierte Werte
 - Allgemeines Muster:
   
@@ -128,7 +131,7 @@ int Square(int x) { return x * x; }​
 int Inc(int x) { return x + 1; }​
 ```
 
-**C# 1.0**
+**C# 1.0:**
 
 ```csharp
 Function f;​
@@ -140,7 +143,7 @@ f = new Function(Inc);	    ... f(3) ...	// 4​
 
 ## Lambda Ausdrücke - Entwicklung II
 
-**C# 2.0**
+**C# 2.0:**
 
 ```csharp
 Function f;​
@@ -148,7 +151,7 @@ f = delegate (int x) { return x * x; }	... f(3) ...	// 9​
 f = delegate (int x) { return x + 1; }	... f(3) ...	// 4
 ```
 
-**C# 3.0**
+**C# 3.0:**
 
 ```csharp
 f = x => x * x; ... f(3) ...	// 9​
@@ -159,7 +162,7 @@ f = x => x + 1;	... f(3) ...	// 4​
 
 ## Beispiel für Lambda Ausdrücke
 
-**Anwendung einer Funktion auf eine Folge von Zahlen**
+**Anwendung einer Funktion auf eine Folge von Zahlen:**
 
 ```csharp
 delegate int Function (int x);​
@@ -303,6 +306,7 @@ Weitere Informationen zu Erweiterungsmethoden finden Sie im C# Programmierhandbu
 [C# Programmierhandbuch/Extension](https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
 
 ### Konzept
+
 - Erweiterung bestehender Typen (class, struct, interface)
 - Beispiel:
 
@@ -342,7 +346,6 @@ static class FractionUtils
 - und der erster Parameter muss mit this und dem Erweiterungstyp deklariert werden
 
 ---
-
 
 ## Erweiterungsmethoden - Verwendung
 
@@ -417,7 +420,6 @@ IEnumerable<string> result = a.Where(s => s.StartsWith("B"));
 
 ---
 
-
 ## Automatische Eigenschaften
 
 Weitere Informationen zu Automatisch implementierten Eigenschaften finden Sie im C# Programmierhandbuch von Microsoft
@@ -452,27 +454,27 @@ Console.WriteLine(obj.Name); // Ausgabe: John
 
 Type die während der Ausführung erzeugt werden (mit Angabe von Eigenschaften)
 
-```csharp 
+```csharp
 var obj = new { Name = "John", Id = 100 };  // erzeugt einen neuen Typen mit den Eigenschaften Name und Id
 // var Anonymer Typ auf der rechten Seite - Typinference!
 ```
 
 Erzeugt =>
 
-```csharp 
+```csharp
 class ??? {
   public int Id { get; private set; }
   public string Name { get; private set; }
 }
 ```
 
-```csharp 
+```csharp
 ??? obj = new ???();
 obj.Name = "John";
 obj.Id = 100;
 ```
 
-```csharp 
+```csharp
 var v1 = “Linda“;           // muss mit einem Wert initialisiert werden,
 var v2 = default(string);   // oder mit dem Default-Wert eines Typs!
 ```
@@ -489,12 +491,12 @@ var v2 = default(string);   // oder mit dem Default-Wert eines Typs!
 - Compiler generiert automatisch die ToString() Methode für alle anonyme Typen `Console.WriteLine(obj);` => `{ Id = 1234, Name = "John Doe" }`
 - Anonyme Typen werden oft in Projektionen von Lambda Ausdrücken gebraucht
 
-```csharp 
+```csharp
 List<Student> list = ...;
 var result = list.Select(s => new { s.Name, s.Subject } );
 
 // result ist IEnumerable<???>
-``` 
+```
 
 ---
 
@@ -508,18 +510,18 @@ var result = list.Select(s => new { s.Name, s.Subject } );
 
 Typische Anwendungen
 
-```csharp 
+```csharp
 var obj = new { Width = 100, Height = 50 };             // ??? obj = 
 var res = list.Select(s => new { s.Name, s.Subject });  // IEnumerable<???> res = ...
 var dict = new Dictionary<string, int>();               // Dictionary<string, int> dict = new Dictionary<string, int>();
-``` 
+```
 
 Im Prinzip ist folgendes möglich (aber nicht empfehlenswert!)
 
-```csharp 
+```csharp
 var x = 3;              // int x = 3;
 var s = "John";         // string s = "John";
-``` 
+```
 
 ---
 
@@ -537,7 +539,8 @@ Weitere Informationen zu Partielle Klassen und Methoden finden Sie im C# Program
 
 [C# Programmierhandbuch/PartialMethods](https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 
-## Beispiel
+**Beispiel:**
+
 ```csharp
 public partial class Accelerator
 {
@@ -566,7 +569,8 @@ public partial class C {                // Datei Part2.cs
 }
 ```
 
-Zweck
+**Zweck:**
+
 - Teile können nach Funktionalitäten gruppiert werden
 - verschiedene Entwickler können gleichzeitig an derselben Klasse arbeiten
 - erster Teil kann maschinengeneriert sein, zweiter Teil handgeschrieben
