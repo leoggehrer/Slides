@@ -1,0 +1,16 @@
+@startuml mvvm_pattern
+!theme cerulean-outline
+skinparam rectangleStyle rounded
+
+rectangle View
+rectangle ViewModel
+rectangle Model
+
+View -down-> ViewModel : calls
+ViewModel -down-> Model : calls
+Model -[hidden]-> View
+
+ViewModel -right..> View : notifies
+Model -right..> ViewModel : notifies
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml mvc_pattern
+!theme cerulean-outline
+skinparam rectangleStyle rounded
+
+rectangle View
+rectangle Controller
+rectangle Model
+
+View -down-> Controller : calls
+Controller -down-> Model : updates
+Model -right..> View : notifies
+View -down-> Model : calls
+
+@enduml
