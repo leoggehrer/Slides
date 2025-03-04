@@ -41,7 +41,7 @@ marp: true
 
 ## Objektmodel
 
-![Objektmodel (OM)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://github.com/leoggehrer/Slides/tree/main/MVVMPattern/diagrams/mvvm_pattern.puml)
+![Objektmodel (OM)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://github.com/leoggehrer/Slides/blob/main/MVVMPattern/diagrams/mvvm_pattern.puml)
 
 ---
 
