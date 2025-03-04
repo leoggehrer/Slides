@@ -41,13 +41,11 @@ marp: true
 
 ## Objektmodel
 
-![Systemstructure (PA)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/CompanyManager-Template/master/diagrams/systemstructure.puml)
-
 ![Objektmodel (OM)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/Slides/master/MVVMPattern/diagrams/mvvm_pattern.puml)
 
 ---
 
-## Vorteile und Nachteile des MVVM-Patterns
+## Vorteile des MVVM-Patterns
 
 ### Vorteile
 
@@ -55,6 +53,10 @@ marp: true
 - **Verbesserte Testbarkeit** durch Unabhängigkeit von UI-Komponenten
 - **Wiederverwendbarkeit** von ViewModels
 - **Erleichterte Wartung und Erweiterbarkeit**
+
+---
+
+## Nachteile des MVVM-Patterns
 
 ### Nachteile
 
