@@ -43,7 +43,7 @@ marp: true
 
 ![Systemstructure (PA)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/CompanyManager-Template/master/diagrams/systemstructure.puml)
 
-![Objektmodel (OM)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://github.com/leoggehrer/Slides/main/MVVMPattern/diagrams/mvvm_pattern.puml)
+![Objektmodel (OM)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/Slides/master/MVVMPattern/diagrams/mvvm_pattern.puml)
 
 ---
 
