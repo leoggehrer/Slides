@@ -14,6 +14,7 @@
 - [Singleton-Pattern](https://github.com/leoggehrer/Slides/tree/main/SingletonPattern)
 - [Observer-Pattern](https://github.com/leoggehrer/Slides/tree/main/ObserverPattern)
 - [MVC-Pattern](https://github.com/leoggehrer/Slides/tree/main/MVCPattern)
+- [MVVM-Pattern](https://github.com/leoggehrer/Slides/tree/main/MVVMPattern)
 
 ## [Spracherweiterungen](#)
 
@@ -28,4 +29,5 @@
 - [Docker-Install-MSQL](https://github.com/leoggehrer/Slides/tree/main/Docker)
 - [Nuget-Packages-Install](https://github.com/leoggehrer/Slides/tree/main/NugetInstall)
 - [Create database-CodeFirst](https://github.com/leoggehrer/Slides/tree/main/EFCreateDatabase)
+- [EntityFramework-Logging](https://github.com/leoggehrer/Slides/tree/main/EFLogging)
 - [DotNet-AppSettings](https://github.com/leoggehrer/Slides/tree/main/DotnetAppSettings)
