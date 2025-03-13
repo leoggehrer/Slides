@@ -1,0 +1,82 @@
+/* Akademisches Marp Theme */
+
+@import 'default';
+
+/* Allgemeine Stile */
+section {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #333;
+  background-color: red;
+  text-align: left;
+  padding: 40px;
+}
+
+/* Titelseite */
+section:first-of-type {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* Überschriften */
+h1 {
+  color: #00274D;
+  font-size: 2em;
+  border-bottom: 2px solid #00274D;
+  padding-bottom: 5px;
+}
+
+h2 {
+  color: #00274D;
+  font-size: 1.6em;
+}
+
+h3 {
+  color: #00509E;
+  font-size: 1.3em;
+}
+
+/* Listen */
+ul, ol {
+  margin-left: 20px;
+  font-size: 1em;
+}
+
+/* Code-Blöcke */
+code {
+  background-color: #f5f5f5;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Fußzeile mit Titel und Seitenzahlen */
+section::after {
+  content: attr(data-marpit-pagination) ' | ' attr(data-marpit-title);
+  font-size: 0.8em;
+  color: #666;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+/* Zitate */
+blockquote {
+  border-left: 3px solid #00509E;
+  padding-left: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+/* Tabellen */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+th {
+  background-color: #f0f0f0;
+}
